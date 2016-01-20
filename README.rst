@@ -1,16 +1,12 @@
-Quicktime/MP4 Fast Start
-------------------------
-Enable streaming and pseudo-streaming of Quicktime and MP4 files by
-moving metadata and offset information to the front of the file.
+pyatomlist
+----------
 
-This program is based on qt-faststart.c from the ffmpeg project, which is
-released into the public domain, as well as ISO 14496-12:2005 (the official
-spec for MP4), which can be obtained from the ISO or found online.
+List the position on types of atoms in a MP4 file.
 
-The goals of this project are to run anywhere without compilation (in
-particular, many Windows and Mac OS X users have trouble getting
-qt-faststart.c compiled), to run about as fast as the C version, to be more
-user friendly, and to use less actual lines of code doing so.
+This program is based on qtfaststart of danielgtaylor, which in turn is
+based on qt-faststart.c from the ffmpeg project, which is released into 
+the public domain, as well as ISO 14496-12:2005 (the official spec for
+MP4), which can be obtained from the ISO or found online.
 
 Features
 --------
@@ -26,13 +22,13 @@ Installing from PyPi
 
 To install from PyPi, you may use ``easy_install`` or ``pip``::
 
-    easy_install qtfaststart
+    easy_install pyatomlist
 
 Installing from source
 ----------------------
 
 Download a copy of the source, ``cd`` into the top-level
-``qtfaststart`` directory, and run::
+``pyatomlist`` directory, and run::
 
     python setup.py install
 
@@ -41,25 +37,22 @@ may need root access (via ``sudo`` or ``su``).
 
 Usage
 -----
-See ``qtfaststart --help`` for more info! If outfile is not present then
+See ``pyatomlist --help`` for more info! If outfile is not present then
 the infile is overwritten::
 
-    $ qtfaststart infile [outfile]
+    $ pyatomlist infile
 
 To run without installing you can use::
 
-    $ bin/qtfaststart infile [outfile]
+    $ bin/pyatomlist infile
 
-To see a list of top-level atoms and their order in the file::
+If on Windows, the pyatomlist script will not execute, so use::
 
-    $ bin/qtfaststart --list infile
-
-If on Windows, the qtfaststart script will not execute, so use::
-
-    > python -m qtfaststart ...
+    > python -m pyatomlist ...
 
 History
 -------
+    * 2016-01-20: Fork of qtfaststart to pyatomlist.
     * 2013-08-07: Copy input file permissions to output file.
     * 2013-08-06: Fix a bug producing 8kb mdat output.
     * 2013-07-05: Introduced Python 3 support.
@@ -85,6 +78,8 @@ History
 
 License
 -------
+
+Copyright (C) 2016 Christian Sieber <c.sieber@tum.de>
 Copyright (C) 2008 - 2013  Daniel G. Taylor <dan@programmer-art.org>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

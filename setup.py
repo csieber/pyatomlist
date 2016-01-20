@@ -3,26 +3,26 @@ try:
 except ImportError:
     from distutils.core import setup
 
-import qtfaststart
+import pyatomlist
 
 with open('README.txt') as readme:
     long_description = readme.read()
 
 setup_params = dict(
-    name='qtfaststart',
-    version=qtfaststart.VERSION,
-    description='Quicktime atom positioning in Python for fast streaming.',
+    name='pyatomlist',
+    version=pyatomlist.VERSION,
+    description='Simple Python tool to list all atoms and their position in a MP4 file.',
     long_description=long_description,
-    author='Daniel G. Taylor',
-    author_email='dan@programmer-art.org',
-    url='https://github.com/gtaylor/qtfaststart',
+    author='Christian Sieber, Daniel G. Taylor (for qtfaststart)',
+    author_email='c.sieber@tum.de',
+    url='https://github.com/csieber/pyatomlist',
     license='MIT License',
     platforms=["any"],
-    provides=['qtfaststart'],
+    provides=['pyatomlist'],
     packages=[
-        'qtfaststart',
+        'pyatomlist',
     ],
-    scripts=['bin/qtfaststart'],
+    scripts=['bin/pyatomlist'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',

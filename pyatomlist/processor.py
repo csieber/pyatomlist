@@ -1,6 +1,6 @@
 """
     The guts that actually do the work. This is available here for the
-    'qtfaststart' script and for your application's direct use.
+    'pyatomlist' script and for your application's direct use.
 """
 
 import shutil
@@ -21,7 +21,7 @@ from qtfaststart.exceptions import FastStartException
 
 CHUNK_SIZE = 8192
 
-log = logging.getLogger("qtfaststart")
+log = logging.getLogger("pyatomlist")
 
 # Older versions of Python require this to be defined
 if not hasattr(os, 'SEEK_CUR'):
@@ -161,20 +161,20 @@ def _moov_is_compressed(datastream, moov_atom):
     """
     # seek to the beginning of the moov atom contents
     datastream.seek(moov_atom.position+8)
-    
+
     # step through the moov atom childeren to see if a cmov atom is among them
     stop = moov_atom.position + moov_atom.size
     while datastream.tell() < stop:
         child_atom = _read_atom_ex(datastream)
         datastream.seek(datastream.tell()+child_atom.size - 8)
-        
+
         # cmov means compressed moov header!
         if child_atom.name == 'cmov':
             return True
-    
+
     return False
 
-def process(infilename, outfilename, limit=float('inf'), to_end=False, 
+def process(infilename, outfilename, limit=float('inf'), to_end=False,
         cleanup=True):
     """
         Convert a Quicktime/MP4 file for streaming by moving the metadata to
@@ -251,7 +251,7 @@ def process(infilename, outfilename, limit=float('inf'), to_end=False,
             log.debug("Writing ftyp... (%d bytes)" % atom.size)
             datastream.seek(atom.position)
             outfile.write(datastream.read(atom.size))
- 
+
     if not to_end:
         _write_moov(moov, outfile)
 
@@ -259,7 +259,7 @@ def process(infilename, outfilename, limit=float('inf'), to_end=False,
     skip_atom_types = ["ftyp", "moov"]
     if cleanup:
         skip_atom_types += ["free"]
-    
+
     atoms = [item for item in index if item.name not in skip_atom_types]
     for atom in atoms:
         log.debug("Writing %s... (%d bytes)" % (atom.name, atom.size))
