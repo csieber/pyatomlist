@@ -1,4 +1,3 @@
-.idea
 build
 dist
 *.pyc
@@ -6,3 +5,4 @@ dist
 *.tmp
 *.swp
 MANIFEST
+pyatomlist.egg-info/
