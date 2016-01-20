@@ -5,7 +5,7 @@ except ImportError:
 
 import pyatomlist
 
-with open('README.txt') as readme:
+with open('README.rst') as readme:
     long_description = readme.read()
 
 setup_params = dict(
