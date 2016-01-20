@@ -1,2 +1,2 @@
-from qtfaststart import command
+from pyatomlist import command
 command.run()

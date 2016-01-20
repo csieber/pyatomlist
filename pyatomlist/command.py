@@ -8,17 +8,17 @@ import sys
 import tempfile
 
 from optparse import OptionParser
-from qtfaststart import VERSION
-from qtfaststart import processor
-from qtfaststart.exceptions import FastStartException
+from pyatomlist import VERSION
+from pyatomlist import processor
+from pyatomlist.exceptions import FastStartException
 
-log = logging.getLogger("qtfaststart")
+log = logging.getLogger("pyatomlist")
 
 def run():
     logging.basicConfig(level = logging.INFO, stream = sys.stdout,
                         format = "%(message)s")
 
-    parser = OptionParser(usage="%prog [options] infile [outfile]",
+    parser = OptionParser(usage="%prog [options] infile",
                           version="%prog " + VERSION)
 
     parser.add_option("-d", "--debug", dest="debug", default=False,
