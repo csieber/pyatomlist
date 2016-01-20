@@ -80,6 +80,7 @@ License
 -------
 
 Copyright (C) 2016 Christian Sieber <c.sieber@tum.de>
+
 Copyright (C) 2008 - 2013  Daniel G. Taylor <dan@programmer-art.org>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
