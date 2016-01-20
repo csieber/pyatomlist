@@ -42,7 +42,7 @@ def run():
             # an empty string
             atom = "----"
 
-        print("%09d: %s (size %d Bytes)" % (pos, atom, size))
+        print("%d,%s,%d" % (pos, atom, size))
 
     raise SystemExit
 
