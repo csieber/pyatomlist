@@ -1,7 +1,7 @@
 pyatomlist
 ----------
 
-List the position on types of atoms in a MP4 file.
+List the position and types of atoms in a MP4 file.
 
 This program is based on qtfaststart of danielgtaylor, which in turn is
 based on qt-faststart.c from the ffmpeg project, which is released into 
@@ -13,16 +13,6 @@ Features
 
     * Works everywhere Python (2.6+) can be installed
     * Handles both 32-bit (stco) and 64-bit (co64) atoms
-    * Handles any file where the mdat atom is before the moov atom
-    * Preserves the order of other atoms
-    * Can replace the original file (if given no output file)
-
-Installing from PyPi
---------------------
-
-To install from PyPi, you may use ``easy_install`` or ``pip``::
-
-    easy_install pyatomlist
 
 Installing from source
 ----------------------
