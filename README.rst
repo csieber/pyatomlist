@@ -43,28 +43,8 @@ If on Windows, the pyatomlist script will not execute, so use::
 History
 -------
     * 2016-01-20: Fork of qtfaststart to pyatomlist.
-    * 2013-08-07: Copy input file permissions to output file.
-    * 2013-08-06: Fix a bug producing 8kb mdat output.
-    * 2013-07-05: Introduced Python 3 support.
-    * 2013-07-05: Added launcher via 'python -m qtfaststart'.
-    * 2013-07-05: Internal refactoring for clarity and robustness. Functions
-      now work with named tuples. Backward compatability is maintained. Expect
-      a future, backward-incompatible release to replace other functions.
-    * 2013-07-05: Created an ``Atom`` namedtuple to represent a fourcc atom
-      (name, stream position, and size).
-    * 2013-01-28: Support strange zero-name, zero-length atoms, re-license
-      under the MIT license, version bump to 1.7
-    * 2011-11-01: Fix long-standing os.SEEK_CUR bug, version bump to 1.6
-    * 2011-10-11: Packaged and published to PyPi by Greg Taylor
-      <gtaylor AT duointeractive DOT com>, version bump to 1.5.
-    * 2010-02-21: Add support for final mdat atom with zero size, patch by
-      Dmitry Simakov <basilio AT j-vista DOT ru>, version bump to 1.4.
-    * 2009-11-05: Added --sample option. Version bump to 1.3
-    * 2009-03-13: Update to be more library-friendly by using logging module,
-      rename fast_start => process, version bump to 1.2
-    * 2008-10-04: Bug fixes, support multiple atoms of the same type,
-      version bump to 1.1
-    * 2008-09-02: Initial release
+    
+For the history predating pyatomlist, please check qtfaststart.
 
 License
 -------
