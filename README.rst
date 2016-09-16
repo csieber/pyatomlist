@@ -27,8 +27,7 @@ may need root access (via ``sudo`` or ``su``).
 
 Usage
 -----
-See ``pyatomlist --help`` for more info! If outfile is not present then
-the infile is overwritten::
+See ``pyatomlist --help`` for more info! ::
 
     $ pyatomlist infile
 
